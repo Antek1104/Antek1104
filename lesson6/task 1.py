@@ -8,91 +8,53 @@
 #В пароле есть хотя бы один спец символ (+, -, /, _, % и т.д. P.S. их на самом деле больше)
 
 
-
-#Проверка №1:
-
-password = '123'
-if len(password) <= 8:
-   print('Skore:2 ')
-   print('Recomendation: ')
-   print('Use special characters')
-   print('The minimum password length is 8')
-   print('Use capital letters')
-else:
-    print('-')
-      
-#Проверка №2:
-
-password = 'admin123'
+password = input()
+count = 0
 has_digit = False
+has_lower = False
+has_upper = False
 
-for char in password:
-    print(char)
-    if char.isdigit():
-        has_digit = True
-        break
+for i in password:
+if i.isupper():
+has_upper = True
+break
+if has_upper:
+count += 1
+else:
+print('Добавьте букву верхнего регистра')
 
+for i in password:
+if i.islower():
+has_lower = True
+break
+if has_lower:
+count += 1
+else:
+print('Добавьте букву нижнего регистра')
 
+for i in password:
+if i.isdigit():
+has_digit = True
+break
 if has_digit:
-    print('Skore:3 ')
-    print('Recomendation: ')
-    print('Use capital letters')
-    print('Use special characters')
+count += 1
 else:
-    print('-')
-      
-# Проверка 3 :
+print('Добавьте цифру в Ваш пароль')
 
-password = 'adMin123'
-has_digit = False
-
-for s in password:
-    print('Good')
-    if s.isupper():
-        has_digit = True
-        break
-
-if s.isupper:
-    print('Skore:4 ')
-    print('Recomendation: ')
-    print('Use special characters')
+for i in password:
+if i in '!@#$%^&*()_+?><|"':
+has_special = True
+break
+if has_special:
+count += 1
 else:
-    print('-')
+print('Добавьте спец символ в Ваш пароль')
 
-#  Проверка 4:
-
-password = 'adMin123'
-has_digit = False
-
-for s in password:
-    print('Good')
-    if s.islower():
-        has_digit = True
-        break
-
-if s.islower():
-    print('Skore:4 ')
-    print('Recomendation: ')
-    print('Use special characters')
+if len(password) >= 8:
+count += 1
 else:
-    print('-')      
+print('Длина Вашего пароля менее 8 исмволов')
 
-# Проверка 5:
-
-password = 'adMin123@#'
-has_digit = False
-
-for s in password:
-    print('Good')
-    if s.punctuation():
-        has_digit = True
-        break
-
-if s.punctuation():
-    print('Skore:5 ')
-else:
-    print('-')
-
-
+print(f'Ваш пароль получил {count} балов из 5')
 
 
