@@ -1,9 +1,7 @@
 # Вывести треугольник #1 с шириной N с помощью цикла while
 
-N = int(input('Ввести ширину треугольника: '))
-N = 5
-d = '*'
-print(N * d)
-while N != 1:
-        N -= 1
-        print(N * d)
+a = int(input('Enter N number:'))
+i = 0
+while i < a:
+    print ('*'*a)
+    a -= 1
