@@ -1,12 +1,10 @@
 # Вывести треугольник #3 с шириной N с помощью цикла while
 
-N = int(input('Ввести ширину треугольника: '))
-N = 5
-d = '*'
-k = ''
-a = 0
-print(N * d)
-while N != 1:
-        N -= 1
-        a += 1
-        print((k * a)+(N * d))
+a = int(input('Enter N number:'))
+i = 0
+n = 0
+while i < a:
+    print(' '*n, end='')
+    print('*'*a)
+    a -= 1
+    n += 1
